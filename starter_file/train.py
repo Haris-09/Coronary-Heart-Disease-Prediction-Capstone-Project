@@ -15,9 +15,11 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 def clean_data(data):
 
-    x_df = data.to_pandas_dataframe()
+    #Renaming Male column to gender : 1 - male, 0 - female
+    data = data.rename(columns={'male': 'gender'})
+    x_df = data.to_pandas_dataframe().dropna()
+    y_df = x_df.pop("TenYearCHD")
     
-
     return x_df, y_df
 
 def main():
