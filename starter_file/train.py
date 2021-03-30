@@ -35,7 +35,7 @@ def main():
     run.log("Max iterations:", np.int(args.max_iter))
 
     #The dataset is registered using Python SDK in the notebook
-    dataset_name = 'Framingham Dataset'
+    dataset_name = 'Framingham'
 
     # Get a dataset by name
     ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
