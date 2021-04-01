@@ -39,7 +39,7 @@ def main():
 
     # Get a dataset by name
     ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
-    df = dataset.to_pandas_dataframe()
+    df = ds.to_pandas_dataframe()
     x, y = clean_data(df)
 
     # TODO: Split data into train and test sets.
