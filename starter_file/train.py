@@ -10,11 +10,23 @@ from azureml.core.run import Run
 from azureml.core.dataset import Dataset
 from azureml.data.dataset_factory import TabularDatasetFactory
 
+# TODO: Create TabularDataset using TabularDatasetFactory
+# Data is located at:
+# "https://raw.githubusercontent.com/Haris-09/Coronary-Heart-Disease-Prediction-Capstone-Project/master/starter_file/framingham.csv"
+location = "https://raw.githubusercontent.com/Haris-09/Coronary-Heart-Disease-Prediction-Capstone-Project/master/starter_file/framingham.csv"
+ds = TabularDatasetFactory.from_delimited_files(path=location)
+
+
+
+run = Run.get_context()
+
 def clean_data(data):
 
     #Renaming Male column to gender : 1 - male, 0 - female
-    data = data.rename(columns={'male': 'gender'})
-    x_df = data.to_pandas_dataframe().dropna()
+    data = data.to_pandas_dataframe().rename(columns={'male': 'gender'})
+    data = data.drop(['education'],axis=1,inplace=True)
+    #data = data.to_pandas_dataframe().drop('NA', axis=0)
+    x_df = data.dropna(axis=0, inplace=True)
     y_df = x_df.pop("TenYearCHD")
     
     return x_df, y_df
@@ -27,20 +39,11 @@ def main():
     parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations to converge")
     
     args = parser.parse_args()
-
-    run = Run.get_context()
-    workspace = run.experiment.workspace
     
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
 
-    #The dataset is registered using Python SDK in the notebook
-    dataset_name = 'Framingham'
-
-    # Get a dataset by name
-    ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
-    df = ds.to_pandas_dataframe()
-    x, y = clean_data(df)
+    x, y = clean_data(ds)
 
     # TODO: Split data into train and test sets.
 
@@ -49,12 +52,7 @@ def main():
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
     accuracy = model.score(x_test, y_test)
-
     run.log("Accuracy", np.float(accuracy))
-    #save the best model
-    os.makedirs('outputs', exist_ok = True)
-    
-    joblib.dump(value = model, filename= 'outputs/model.joblib')
 
 if __name__ == '__main__':
     main()
