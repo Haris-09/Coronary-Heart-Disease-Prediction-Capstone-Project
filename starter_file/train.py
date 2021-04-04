@@ -12,7 +12,7 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 def clean_data(data):
 
-    x_df = data.to_pandas_dataframe().dropna()
+    x_df = data.to_pandas_dataframe()
     y_df = x_df.pop("TenYearCHD")
     
     return x_df, y_df
@@ -33,7 +33,7 @@ def main():
     run.log("Max iterations:", np.int(args.max_iter))
 
     #The dataset is registered using Python SDK in the notebook
-    dataset_name = 'Framingham'
+    dataset_name = 'Framingham-Prepared'
 
     # Get a dataset by name
     ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
