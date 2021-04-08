@@ -18,11 +18,11 @@ The task is to create a binary classification model to predict the risk of devel
 I downloaded the dataset from kaggle and uploaded it into github repository. For the Hyperdrive part i done some preprocessing manually on excel and uploaded it to my github repository. Finally i registered the datasets in Azure ML using TabularDatsetFactory in the notebook.
 
 <p align="center">
-  <img src="screenshots/Datasets-Registered.PNG" height="250">
+  <img src="Screenshots/Datasets-Registered.PNG" height="250">
 </p>
 
 <p align="center">
-  <img src="screenshots/Datasets-Explore.PNG" height="250">
+  <img src="Screenshots/Datasets-Explore.PNG" height="250">
 </p>
 
 ## Automated ML
