@@ -15,7 +15,7 @@ The task is to create a binary classification model to predict the risk of devel
 
 The dataset contains 15 features that can be used for prediction. The remaining one last column "TenYearCHD" is label or output.
 
-| #Variable | #Description  |
+| Variable | Description  |
 | :-----: | :-: |
 | male | Participant sex |
 | age | Age at exam (years) |
