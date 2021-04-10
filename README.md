@@ -212,7 +212,4 @@ As a response we will get result of either 0 or 1.
 
 ## Screen Recording
 
-
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+https://youtu.be/hwLass4GbSU
