@@ -97,8 +97,16 @@ Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, M
 We can improve the model by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
+I choosed the LogisticRegression Algorithm as it is binary Classification problem. we are trying to predict wether a patient has a potential risk of coronary heart disease in the next 10 years. The Hyperparameters of the model that are tuned using Hyperdrive are:
+
+- --C the inverse of Regularization strength helps prevent over-fitting of the model. Values randomly used are (0.002, 0.02, 0.2, 2.0).
+- max_iter the maximum number of iterations to converge the model. Values randomly used are (100, 200, 300, 500).
+- Bandit Policy as an early termination policy to effectively utilize the computing resources by terminating the poor performing runs.
+
+<p align="center">
+  <img src="Screenshots/Hyperdrive-Configuration.PNG">
+</p>
 
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
