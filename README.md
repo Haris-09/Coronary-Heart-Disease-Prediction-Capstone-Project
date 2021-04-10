@@ -13,7 +13,7 @@ In this project i uses the Framingham Heart Study Dataset available on [Kaggle](
 
 The task is to create a binary classification model to predict the risk of developing coronary heart disease in the next 10 years. Using the Azure ML SDK we will train the model using both AutoML and Hyperdrive. Finally we compare the models and deploy the best model as a webservice. In the case of Hyperdrive i uses logistic regression as a classification algorithm.
 
-The dataset contains 15 features that can be used for prediction. The remaining one last column "TenYearCHD" is label or output.
+The dataset contains 15 features that can be used for prediction. The remaining one last column "TenYearCHD" is label or Output.
 
 | Variable | Description  |
 | :-----: | :-: |
@@ -47,7 +47,7 @@ I downloaded the dataset from kaggle and uploaded it into github repository. For
 
 ## Automated ML
 
-I uses the following AutoML Configuration Settings.
+I used the following AutoML Configuration Settings.
 
 <p align="center">
   <img src="Screenshots/AutoML-Configuration.PNG">
@@ -67,9 +67,34 @@ I uses the following AutoML Configuration Settings.
 | debug_log | automl_errors.log | log file to track errors in the automl process |
 
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+The best model obtained from AutoML is SparseNormalizer XGBoostClassifier with an Accuracy of 84.835 %.
+
+Below Screenshots displays the completed AutoML Run showing the run and the Rundetails widget is completed.
+
+<p align="center">
+  <img src="Screenshots/AutoML-Run 8-Completed.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/AutoML-Rundetails-Widget.PNG">
+</p>
+
+Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, Metrics and Id.
+
+<p align="center">
+  <img src="Screenshots/AutoML-Best Run.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/AutoML-Best Run-Model.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/AutoML-Best Run-Metrics.PNG">
+</p>
+
+We can improve the model by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
