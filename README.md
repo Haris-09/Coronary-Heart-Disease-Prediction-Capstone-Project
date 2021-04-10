@@ -77,7 +77,7 @@ Below Screenshots displays the completed AutoML Run showing the run and the Rund
 </p>
 
 <p align="center">
-  <img src="Screenshots/AutoML-Rundetails-Widget.PNG">
+  <img src="Screenshots/AutoML-RunDetails-Widget.PNG">
 </p>
 
 Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, Metrics and Id.
