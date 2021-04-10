@@ -135,13 +135,84 @@ Below Screenshots shows the Best Hyperdrive Run detials like Accuracy, Metrics a
 The model results can be improved by applying feature engineering and other classification algorithms like Random Forest, Support Vector Machine and KNNs.
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+The model i deployed is the best AutoML Model with an accuracy of 84.835%.
+
+Below Screenshots shows the registered model and the Enpoint status Healthy.
+
+<p align="center">
+  <img src="Screenshots/Models-BestAutoML.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/Endpoint.PNG">
+</p>
+
+The sample input is provided in the json format.
+
+```
+data = {
+    "data": [
+        {
+            'male': 0,
+            'age': 55,
+            'education': 4 ,
+            'currentSmoker': 1,
+            'cigsPerDay': 20,
+            'BPMeds': 0,
+            'prevalentStroke': 0,
+            'prevalentHyp': 0,
+            'diabetes': 0,
+            'totChol': 285,
+            'sysBP': 175,
+            'diaBP': 84,
+            'BMI': 25.50,
+            'heartRate': 93,
+            'glucose': 87
+        },
+        {
+            'male': 1,
+            'age': 40,
+            'education': 4 ,
+            'currentSmoker': 0,
+            'cigsPerDay': 30,
+            'BPMeds': 0,
+            'prevalentStroke': 0,
+            'prevalentHyp': 0,
+            'diabetes': 0,
+            'totChol': 228,
+            'sysBP': 121,
+            'diaBP': 110,
+            'BMI': 30.30,
+            'heartRate': 80,
+            'glucose': 80
+        }
+    ]
+}
+```
+
+The above data can be now used to query the webservice endpoint as below.
+
+```
+data_sample = json.dumps(data)
+
+scoring_uri = service.scoring_uri
+input_data = data_sample
+
+# Set the content type
+headers = {'Content-Type': 'application/json'}
+
+# Make the request and display the response
+response = requests.post(scoring_uri, input_data, headers=headers)
+
+response.json()
+```
+
+As a response we will get result of either 0 or 1.
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+
+
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
