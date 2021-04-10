@@ -68,7 +68,7 @@ I used the following AutoML Configuration Settings.
 
 ### Results
 
-The best model obtained from AutoML is SparseNormalizer XGBoostClassifier with an Accuracy of 84.835 %.
+The best model obtained from AutoML is SparseNormalizer XGBoostClassifier with an Accuracy of 84.835%.
 
 Below Screenshots displays the completed AutoML Run showing the run and the Rundetails widget is completed.
 
@@ -80,7 +80,7 @@ Below Screenshots displays the completed AutoML Run showing the run and the Rund
   <img src="Screenshots/AutoML-RunDetails-Widget.PNG">
 </p>
 
-Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, Metrics and Id.
+Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, Metrics and RunId.
 
 <p align="center">
   <img src="Screenshots/AutoML-Best Run.PNG">
@@ -94,24 +94,45 @@ Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, M
   <img src="Screenshots/AutoML-Best Run-Metrics.PNG">
 </p>
 
-We can improve the model by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
+We can improve the model results by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
 
 ## Hyperparameter Tuning
 
-I choosed the LogisticRegression Algorithm as it is binary Classification problem. we are trying to predict wether a patient has a potential risk of coronary heart disease in the next 10 years. The Hyperparameters of the model that are tuned using Hyperdrive are:
+I choosed the LogisticRegression Algorithm as it is a binary Classification problem. We are trying to predict wether a patient has a potential risk of coronary heart disease in the next 10 years. The Hyperparameters of the model that are tuned using Hyperdrive are:
 
-- --C the inverse of Regularization strength helps prevent over-fitting of the model. Values randomly used are (0.002, 0.02, 0.2, 2.0).
-- max_iter the maximum number of iterations to converge the model. Values randomly used are (100, 200, 300, 500).
-- Bandit Policy as an early termination policy to effectively utilize the computing resources by terminating the poor performing runs.
+- --C: the inverse of Regularization strength helps prevent over-fitting of the model. Values randomly used are (0.002, 0.02, 0.2, 2.0).
+- max_iter: the maximum number of iterations to converge the model. Values randomly used are (100, 200, 300, 500).
+- Bandit Policy: as an early termination policy to effectively utilize the computing resources by terminating the poor performing runs.
 
 <p align="center">
   <img src="Screenshots/Hyperdrive-Configuration.PNG">
 </p>
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+The best Hyperdrive run gives an Accuracy of 85.4% with regularization strength of 2.0 and Max Iterations 500.
+
+Below Screenshots shows the Hyperdrive Run and Run Widget is Completed.
+
+<p align="center">
+  <img src="Screenshots/Hyperdrive-Run 2-Completed.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/Hyperparameter-RunDetails-Widget.PNG">
+</p>
+
+Below Screenshots shows the Best Hyperdrive Run detials like Accuracy, Metrics and RunId.
+
+<p align="center">
+  <img src="Screenshots/Hyperdrive-Best Run.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/Hyperdrive-Best Run-Metrics.PNG">
+</p>
+
+The model results can be improved by applying feature engineering and other classification algorithms like Random Forest, Support Vector Machine and KNNs.
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
