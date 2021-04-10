@@ -54,17 +54,17 @@ I uses the following AutoML Configuration Settings.
 </p>
 
 | Configuration | Value | Explanation |
-| :-----: | :-: |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| :-----: | :-----: | :-: |
+| experiment_timeout_minutes | 30 | Maximum amount of time in minutes that all iterations combined can take before the experiment terminates 30 minutes gives me better results |
+| max_concurrent_iterations | 4 | To manage child runs in parallel shoul be less than maximum number of nodes of Compute Cluster |
+| primary_metric | accuracy | Metric we want to optimize |
+| compute_target | compute_target | Compute Cluster used for training the model |
+| task | classification | As it is a binary classification problem the output can be either 0 or 1 |
+| label_column_name | TenYearCHD | The output variable in this case the Coronary Heart disease in next 10 years either 0 or 1 |
+| training_data | dataset | Registered training dataset Framingham Heart Disease Dataset in this case |
+| enable_early_stopping | True | used to terminates early if the score is not improving |
+| featurization | auto | define wheter to do featurization automatically handeled by AutoML |
+| debug_log | automl_errors.log | log file to track errors in the automl process |
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
