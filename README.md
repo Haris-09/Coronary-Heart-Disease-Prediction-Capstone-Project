@@ -17,7 +17,7 @@ The dataset contains 15 features that can be used for prediction. The remaining 
 
 | Variable | Description  |
 | :-----: | :-: |
-| male | Participant sex |
+| male | Participant gender |
 | age | Age at exam (years) |
 | education | Highest degree |
 | currentSmoker | Current cigarette smoking at exam |
@@ -46,7 +46,25 @@ I downloaded the dataset from kaggle and uploaded it into github repository. For
 </p>
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+
+I uses the following AutoML Configuration Settings.
+
+<p align="center">
+  <img src="Screenshots/AutoML-Configuration.PNG">
+</p>
+
+| Configuration | Value | Explanation |
+| :-----: | :-: |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
