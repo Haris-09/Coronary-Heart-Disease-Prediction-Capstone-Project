@@ -1,7 +1,7 @@
 
 # Coronary Heart Disease Prediction
 
-This is the Capstone Project of Udacity Machine Learning with Microsoft Azure Nanodegree. In this project we were asked to use the dataset of our choice to solve the desired machine learning problem. We have to train the machine model using AutoML and Hyperdrive after that we have to deploy the best model and consume it's endpoint to get the desired result.
+This is the Capstone Project of Udacity Machine Learning with Microsoft Azure Nanodegree. In this project we were asked to use the dataset of our choice to solve the desired machine learning problem. We have to train the machine learning model using AutoML and Hyperdrive after that we have to deploy the best model and consume it's endpoint to get the desired result.
 
 ## Dataset
 
