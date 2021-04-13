@@ -68,6 +68,7 @@ I used the following AutoML Configuration Settings.
 
 ### Results
 
+### Old Notebook Results from automl.ipynb
 The best model obtained from AutoML is SparseNormalizer XGBoostClassifier with an Accuracy of 84.835%.
 
 Below Screenshots displays the completed AutoML Run showing the run and the Rundetails widget is completed.
@@ -95,6 +96,67 @@ Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, M
 </p>
 
 We can improve the model results by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
+
+### New Notebook Results from automl_v2.ipynb
+
+The best model obtained from AutoML is MaxAbsScaler RandomForest with an Accuracy of 84.812%.
+
+Below Screenshots displays the completed AutoML Run showing the run and the Rundetails widget is completed.
+
+<p align="center">
+  <img src="Screenshots/new/AutoML-Run.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/new/AutoML-RunWidget.PNG">
+</p>
+
+Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, Metrics and RunId.
+
+<p align="center">
+  <img src="Screenshots/new/AutoML-ChildRun.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/AutoML-ChildRun-Model.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/AutoML-ChildRun-Metrics.PNG">
+</p>
+
+<p align="center">
+  <img src="Screenshots/AutoML-ChildRun-Explanation.PNG">
+</p>
+
+We can improve the model results by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
+
+The Properties of the best model are as below.
+```
+Pipeline(memory=None,
+         steps=[('datatransformer',
+                 DataTransformer(enable_dnn=None, enable_feature_sweeping=None,
+                                 feature_sweeping_config=None,
+                                 feature_sweeping_timeout=None,
+                                 featurization_config=None, force_text_dnn=None,
+                                 is_cross_validation=None,
+                                 is_onnx_compatible=None, logger=None,
+                                 observer=None, task=None, working_dir=None)),
+                ('MaxAbsScaler', MaxAbsScaler(copy...
+                 RandomForestClassifier(bootstrap=False, ccp_alpha=0.0,
+                                        class_weight=None, criterion='gini',
+                                        max_depth=None, max_features='sqrt',
+                                        max_leaf_nodes=None, max_samples=None,
+                                        min_impurity_decrease=0.0,
+                                        min_impurity_split=None,
+                                        min_samples_leaf=0.01,
+                                        min_samples_split=0.10368421052631578,
+                                        min_weight_fraction_leaf=0.0,
+                                        n_estimators=10, n_jobs=1,
+                                        oob_score=False, random_state=None,
+                                        verbose=0, warm_start=False))],
+         verbose=False)
+```
 
 ## Hyperparameter Tuning
 
