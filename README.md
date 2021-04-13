@@ -118,15 +118,15 @@ Below Screenshots displays the best AutoML Child Run Completed. It's Accuracy, M
 </p>
 
 <p align="center">
-  <img src="Screenshots/AutoML-ChildRun-Model.PNG">
+  <img src="Screenshots/new/AutoML-ChildRun-Model.PNG">
 </p>
 
 <p align="center">
-  <img src="Screenshots/AutoML-ChildRun-Metrics.PNG">
+  <img src="Screenshots/new/AutoML-ChildRun-Metrics.PNG">
 </p>
 
 <p align="center">
-  <img src="Screenshots/AutoML-ChildRun-Explanation.PNG">
+  <img src="Screenshots/new/AutoML-ChildRun-Explanation.PNG">
 </p>
 
 We can improve the model results by adding crossvalidation to avoid model overfitting, increase the experiment timeout minutes and enable deeplearning in AutoML configuration.
